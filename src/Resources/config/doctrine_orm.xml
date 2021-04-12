@@ -11,46 +11,46 @@
             <tag name="sonata.admin.manager"/>
         </service>
         <!-- FormBuilder -->
-        <service id="sonata.admin.builder.orm_form" class="Sonata\DoctrineORMAdminBundle\Builder\FormContractor">
+        <service id="sonata.admin.builder.orm_form" class="Sonata\DoctrineORMAdminBundle\Builder\FormContractor" public="true">
             <argument type="service" id="form.factory"/>
         </service>
         <!-- ListBuilder -->
-        <service id="sonata.admin.builder.orm_list" class="Sonata\DoctrineORMAdminBundle\Builder\ListBuilder">
+        <service id="sonata.admin.builder.orm_list" class="Sonata\DoctrineORMAdminBundle\Builder\ListBuilder" public="true">
             <argument type="service" id="sonata.admin.guesser.orm_list_chain"/>
             <argument/>
         </service>
-        <service id="sonata.admin.guesser.orm_list" class="Sonata\DoctrineORMAdminBundle\FieldDescription\TypeGuesser">
+        <service id="sonata.admin.guesser.orm_list" class="Sonata\DoctrineORMAdminBundle\FieldDescription\TypeGuesser" public="true">
             <tag name="sonata.admin.guesser.orm_list"/>
         </service>
-        <service id="sonata.admin.guesser.orm_list_chain" class="Sonata\AdminBundle\FieldDescription\TypeGuesserChain">
+        <service id="sonata.admin.guesser.orm_list_chain" class="Sonata\AdminBundle\FieldDescription\TypeGuesserChain" public="true">
             <argument/>
         </service>
         <!-- ShowBuilder  -->
-        <service id="sonata.admin.builder.orm_show" class="Sonata\DoctrineORMAdminBundle\Builder\ShowBuilder">
+        <service id="sonata.admin.builder.orm_show" class="Sonata\DoctrineORMAdminBundle\Builder\ShowBuilder" public="true">
             <argument type="service" id="sonata.admin.guesser.orm_show_chain"/>
             <argument/>
         </service>
-        <service id="sonata.admin.guesser.orm_show" class="Sonata\DoctrineORMAdminBundle\FieldDescription\TypeGuesser">
+        <service id="sonata.admin.guesser.orm_show" class="Sonata\DoctrineORMAdminBundle\FieldDescription\TypeGuesser" public="true">
             <tag name="sonata.admin.guesser.orm_show"/>
         </service>
-        <service id="sonata.admin.guesser.orm_show_chain" class="Sonata\AdminBundle\FieldDescription\TypeGuesserChain">
+        <service id="sonata.admin.guesser.orm_show_chain" class="Sonata\AdminBundle\FieldDescription\TypeGuesserChain" public="true">
             <argument/>
         </service>
         <!-- DatagridBuilder guesser -->
-        <service id="sonata.admin.builder.orm_datagrid" class="Sonata\DoctrineORMAdminBundle\Builder\DatagridBuilder">
+        <service id="sonata.admin.builder.orm_datagrid" class="Sonata\DoctrineORMAdminBundle\Builder\DatagridBuilder" public="true">
             <argument type="service" id="form.factory"/>
             <argument type="service" id="sonata.admin.builder.filter.factory"/>
             <argument type="service" id="sonata.admin.guesser.orm_datagrid_chain"/>
             <argument>%form.type_extension.csrf.enabled%</argument>
         </service>
-        <service id="sonata.admin.guesser.orm_datagrid" class="Sonata\DoctrineORMAdminBundle\FieldDescription\FilterTypeGuesser">
+        <service id="sonata.admin.guesser.orm_datagrid" class="Sonata\DoctrineORMAdminBundle\FieldDescription\FilterTypeGuesser" public="true">
             <tag name="sonata.admin.guesser.orm_datagrid"/>
         </service>
-        <service id="sonata.admin.guesser.orm_datagrid_chain" class="Sonata\AdminBundle\FieldDescription\TypeGuesserChain">
+        <service id="sonata.admin.guesser.orm_datagrid_chain" class="Sonata\AdminBundle\FieldDescription\TypeGuesserChain" public="true">
             <argument/>
         </service>
-        <service id="sonata.admin.data_source.orm" class="Sonata\DoctrineORMAdminBundle\Exporter\DataSource"/>
-        <service id="sonata.admin.field_description_factory.orm" class="Sonata\DoctrineORMAdminBundle\FieldDescription\FieldDescriptionFactory">
+        <service id="sonata.admin.data_source.orm" class="Sonata\DoctrineORMAdminBundle\Exporter\DataSource" public="true" />
+        <service id="sonata.admin.field_description_factory.orm" class="Sonata\DoctrineORMAdminBundle\FieldDescription\FieldDescriptionFactory" public="true">
             <argument type="service" id="doctrine"/>
         </service>
     </services>

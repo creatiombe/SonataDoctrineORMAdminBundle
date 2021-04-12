@@ -5,7 +5,7 @@
             <tag name="sonata.admin.audit_reader"/>
             <argument type="service" id="simplethings_entityaudit.reader" on-invalid="ignore"/>
         </service>
-        <service id="sonata.admin_doctrine_orm.block.audit" class="Sonata\DoctrineORMAdminBundle\Block\AuditBlockService">
+        <service id="sonata.admin_doctrine_orm.block.audit" class="Sonata\DoctrineORMAdminBundle\Block\AuditBlockService" public="true">
             <tag name="sonata.block"/>
             <argument type="service" id="twig"/>
             <argument type="service" id="simplethings_entityaudit.reader" on-invalid="ignore"/>
